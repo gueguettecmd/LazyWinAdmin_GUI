@@ -6530,8 +6530,8 @@ function Call-MainForm_pff
 	$button_PasswordGen_Click={
 		#Clear-RichTextBox
 		Add-Logs "Generating a Password"
-		$Passwordlist = [Char[]]'abcdefgABCDEFG0123456&%$'
-		$Newpass = -join (1..8 | Foreach-Object { Get-Random $Passwordlist -count 1 })|Out-String
+		$Passwordlist = [Char[]]'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&%$#@!'
+		$Newpass = -join (1..16 | Foreach-Object { Get-Random $Passwordlist -count 1 })|Out-String
 		Add-RichTextBox $Newpass
 	}
 	$ToolStripMenuItem_systemInformationMSinfo32exe_Click={Start-Process msinfo32.exe}
